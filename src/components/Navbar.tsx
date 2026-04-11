@@ -5,7 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
-  const { user, isAuthenticated, isAdmin, logout } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
   const router = useRouter();
 
   const handleLogout = () => {
@@ -27,11 +27,6 @@ export default function Navbar() {
             <Link href="/" className="text-gray-600 hover:text-blue-600 transition-colors">
               Headlines
             </Link>
-            {isAdmin && (
-              <Link href="/admin/create" className="text-gray-600 hover:text-blue-600 transition-colors">
-                + New Article
-              </Link>
-            )}
           </div>
 
           {/* Auth section */}
@@ -40,11 +35,6 @@ export default function Navbar() {
               <>
                 <span className="text-sm text-gray-600">
                   Hi, <strong>{user?.username}</strong>
-                  {isAdmin && (
-                    <span className="ml-1 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">
-                      Admin
-                    </span>
-                  )}
                 </span>
                 <button onClick={handleLogout} className="btn-secondary text-sm">
                   Logout

@@ -22,7 +22,7 @@ export const GET_ARTICLES = gql`
         id
         title
         summary
-        author
+        author { id username }
         category
         imageUrl
         publishedAt
@@ -42,7 +42,7 @@ export const GET_ARTICLE = gql`
       title
       content
       summary
-      author
+      author { id username }
       category
       imageUrl
       publishedAt
@@ -58,7 +58,7 @@ export const SEARCH_ARTICLES = gql`
         id
         title
         summary
-        author
+        author { id username }
         category
         publishedAt
       }
@@ -66,23 +66,6 @@ export const SEARCH_ARTICLES = gql`
       currentPage
       totalPages
       hasNextPage
-    }
-  }
-`;
-
-// ─────────────────────────────────────────────
-// NEWS MUTATIONS
-// ─────────────────────────────────────────────
-
-export const CREATE_ARTICLE = gql`
-  mutation CreateArticle($input: CreateArticleInput!) {
-    createArticle(input: $input) {
-      id
-      title
-      summary
-      author
-      category
-      publishedAt
     }
   }
 `;

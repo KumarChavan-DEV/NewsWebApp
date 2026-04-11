@@ -108,7 +108,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {paginatedData.articles.map((article: {
                 id: string; title: string; summary: string;
-                author: string; category: string; imageUrl?: string; publishedAt: string;
+                author: { id: string; username: string }; category: string; imageUrl?: string; publishedAt: string;
               }) => (
                 <ArticleCard key={article.id} article={article} />
               ))}

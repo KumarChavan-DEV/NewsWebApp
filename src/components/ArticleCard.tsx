@@ -4,7 +4,7 @@ interface Article {
   id: string;
   title: string;
   summary: string;
-  author: string;
+  author: { id: string; username: string };
   category: string;
   imageUrl?: string | null;
   publishedAt: string;
@@ -71,7 +71,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
 
           {/* Meta */}
           <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
-            <span>By {article.author}</span>
+            <span>By {article.author?.username}</span>
             <span>{formattedDate}</span>
           </div>
         </div>

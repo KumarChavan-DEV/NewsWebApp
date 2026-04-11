@@ -75,7 +75,7 @@ export default function ArticlePage() {
 
       {/* Meta */}
       <div className="flex items-center gap-4 mt-4 text-sm text-gray-500">
-        <span>By <strong className="text-gray-700">{article.author}</strong></span>
+        <span>By <strong className="text-gray-700">{article.author?.username}</strong></span>
         <span>·</span>
         <span>{formattedDate}</span>
       </div>
