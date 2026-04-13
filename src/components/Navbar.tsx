@@ -27,6 +27,9 @@ export default function Navbar() {
             <Link href="/" className="text-gray-600 hover:text-blue-600 transition-colors">
               Headlines
             </Link>
+            <Link href="/videos" className="text-gray-600 hover:text-blue-600 transition-colors">
+              Videos
+            </Link>
           </div>
 
           {/* Auth section */}

@@ -71,6 +71,63 @@ export const SEARCH_ARTICLES = gql`
 `;
 
 // ─────────────────────────────────────────────
+// CATEGORY QUERIES
+// ─────────────────────────────────────────────
+
+export const GET_CATEGORIES = gql`
+  query GetCategories {
+    categories {
+      id
+      name
+      slug
+      color
+    }
+  }
+`;
+
+// ─────────────────────────────────────────────
+// VIDEO QUERIES
+// ─────────────────────────────────────────────
+
+export const GET_VIDEOS = gql`
+  query GetVideos($pagination: PaginationInput, $category: String) {
+    videos(pagination: $pagination, category: $category) {
+      videos {
+        id
+        title
+        description
+        videoUrl
+        videoType
+        thumbnailUrl
+        category
+        duration
+        publishedAt
+      }
+      totalCount
+      currentPage
+      totalPages
+      hasNextPage
+    }
+  }
+`;
+
+export const GET_VIDEO = gql`
+  query GetVideo($id: ID!) {
+    video(id: $id) {
+      id
+      title
+      description
+      videoUrl
+      videoType
+      thumbnailUrl
+      category
+      duration
+      publishedAt
+    }
+  }
+`;
+
+// ─────────────────────────────────────────────
 // USER QUERIES & MUTATIONS
 // ─────────────────────────────────────────────
 
